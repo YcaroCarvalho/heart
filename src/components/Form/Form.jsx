@@ -1,15 +1,37 @@
 import { React, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Label from "../Label/Label";
 import Input from "../Input/Input";
-import sha256 from 'js-sha256';
+import sha256 from "js-sha256";
 
 const Form = () => {
+
+  const navigate = useNavigate();
+
   function logar(e) {
     e.preventDefault();
+    console.log(`iniciou evento de submit`);
 
-    var senhaHash = sha256(nome+senha)
+    var senhaHash = sha256(nome + senha);
+
+    console.log(senhaHash);
     //se nome mais senha gerar o hash correto entao redirecionar para pagina secreta
-    console.log(`Logou com a senha ${nome+senha} -> ${senhaHash} `);
+
+    if (
+      senhaHash ===
+      "823cc632de117e2c83ebb268e75f93b0ce1fb159cfda8ea78649cf9a43b6e187"
+    ) {
+      console.log(`usuario loggado`);
+
+      localStorage.setItem("user", 'logado');
+      
+
+      navigate("/protectedPage");
+      console.log(`autenticou`);
+    }
+    else {
+      console.log(`senha e/ou usuario incorretos`);
+    }
   }
 
   const [nome, setNome] = useState("");
@@ -18,11 +40,9 @@ const Form = () => {
   console.log(nome);
   console.log(senha);
 
-  
-
   return (
     <form className="form" onSubmit={logar}>
-      <Label htmlFor='nome' text="de felipr para:" />
+      <Label htmlFor="nome" text="de felipr para:" />
       <Input
         id="nome"
         name="nome"
@@ -31,8 +51,8 @@ const Form = () => {
         value={nome}
         onChange={(e) => setNome(e.target.value)}
       />
-      <Label hmlFor='senha' text="senha:" />
-      <Input 
+      <Label hmlFor="senha" text="senha:" />
+      <Input
         id="senha"
         name="senha"
         type="password"
