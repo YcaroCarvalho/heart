@@ -6,6 +6,7 @@ import api from "../../config/configApi";
 
 const ProtectedPage = () => {
   const [data, setData] = useState([]);
+  const [ url, setUrl] = useState('');
   
   const navigate = useNavigate();
 
@@ -15,9 +16,11 @@ const ProtectedPage = () => {
     await api
       .get("/uploadImg")
       .then((res) => {
-        console.log(res.data);
+        console.log(res);
         setData(res.data);
+        setUrl(res.config.baseURL);
         console.log(data);
+        console.log(url);
       })
       .catch((err) => {
         console.log(err);
@@ -37,8 +40,10 @@ const ProtectedPage = () => {
         {
         data.map(post => (
           <div key={post.imgId}>
+            <img src={`${url}/files/${post.src}`} alt={post.imgId} />
             <span>{post.src}</span> <br />
             <span>{post.text}</span> <br />
+            <hr />
           </div>
         ))}
       </div>
