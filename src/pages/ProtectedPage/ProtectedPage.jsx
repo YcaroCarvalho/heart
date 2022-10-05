@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-
 import { useNavigate } from "react-router-dom";
-
 import api from "../../config/configApi";
+import S from "./ProtectedPage.module.css";
 
 const ProtectedPage = () => {
   const [data, setData] = useState([]);
-  const [ url, setUrl] = useState('');
-  
+  const [url, setUrl] = useState("");
+
   const navigate = useNavigate();
 
   //  useeffect requisiçao pra api
@@ -33,30 +32,33 @@ const ProtectedPage = () => {
 
   // useState que salva a requisiçao
   return (
-    <div>
-      <h1>colocar um texto aqui</h1>
-
-      <div>
-        {
-        data.map(post => (
-          <div key={post.imgId}>
-            <img src={`${url}/files/${post.src}`} alt={post.imgId} />
-            <span>{post.src}</span> <br />
-            <span>{post.text}</span> <br />
-            <hr />
-          </div>
-        ))}
-      </div>
-      
-
-      <button
+    <div className={S.bg}>
+      <h1 className={S.title}>💘</h1>
+      <button className={S.sairBtn}
         onClick={() => {
           navigate("/");
           localStorage.removeItem("user");
         }}
       >
-        Sair
+      ❌SAIR 
       </button>
+
+      <div className={S.postCtn}>
+        {data.map((post) => (
+          <div className={S.mapCtn} key={post.imgId}>
+            <img
+              className={S.postImg}
+              src={`${url}/files/${post.src}`}
+              alt={post.imgId}
+            />
+            <span>{post.text}</span>
+            <br />
+            
+          </div>
+        ))}
+      </div>
+
+      
     </div>
   );
 };

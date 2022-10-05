@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Label from "../Label/Label";
 import Input from "../Input/Input";
 import sha256 from "js-sha256";
+import Button from "../Button/Button";
 
 const Form = () => {
 
@@ -51,6 +52,7 @@ const Form = () => {
         value={nome}
         onChange={(e) => setNome(e.target.value)}
       />
+      
       <Label hmlFor="senha" text="senha:" />
       <Input
         id="senha"
@@ -60,7 +62,7 @@ const Form = () => {
         value={senha}
         onChange={(e) => setSenha(e.target.value)}
       />
-      <Input type="submit" text="ENTRAR" />
+      <Button type="submit" text="ENTRAR" />
     </form>
   );
 };
