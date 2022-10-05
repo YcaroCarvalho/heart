@@ -38,8 +38,6 @@ const Form = () => {
   const [nome, setNome] = useState("");
   const [senha, setSenha] = useState("");
 
-  console.log(nome);
-  console.log(senha);
 
   return (
     <form className="form" onSubmit={logar}>
