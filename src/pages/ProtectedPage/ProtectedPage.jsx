@@ -13,7 +13,7 @@ const ProtectedPage = () => {
 
   const getPosts = async () => {
     await api
-      .get("/uploadImg")
+      .get("https://web-production-a037.up.railway.app/uploadImg")
       .then((res) => {
         console.log(res);
         setData(res.data);

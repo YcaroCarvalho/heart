@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export default axios.create({
-    baseURL: "https://heart-card.herokuapp.com"
+    baseURL: "https://web-production-a037.up.railway.app"
 });

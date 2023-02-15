@@ -24,7 +24,7 @@ const Form = () => {
     ) {
       console.log(`usuario loggado`);
 
-      localStorage.setItem("user", 'logado');
+      localStorage.setItem("user", true);
       
 
       navigate("/protectedPage");

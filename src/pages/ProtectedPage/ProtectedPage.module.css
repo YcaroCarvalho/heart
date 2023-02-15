@@ -1,66 +1,62 @@
 .bg {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column ;
-    background-color:#a5a4a0;
-    gap: 10px;
-    min-height: 100vh;
-    padding-top: 20px;
-    padding-bottom: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #a5a4a0;
+  gap: 10px;
+  min-height: 100vh;
+  padding-top: 20px;
+  padding-bottom: 70px;
 }
 
 .sairBtn {
-    display: flex;
-    position: fixed;
-    top: 92vh;
-    right: 8vw;
+  display: flex;
+  position: fixed;
+  top: 92vh;
+  right: 8vw;
 
-    padding:  5px 10px;
-    background-color: #ec9191;
-    color: #201010;
-    border: 2px solid #201010;
-    border-radius: 30px;
-    box-shadow: 2px 2px;
+  padding: 5px 10px;
+  background-color: #ec9191;
+  color: #201010;
+  border: 2px solid #201010;
+  border-radius: 30px;
+  box-shadow: 2px 2px;
 
-    letter-spacing: 2px;
-    font-weight: 700;
-    
+  letter-spacing: 2px;
+  font-weight: 700;
 }
 
 .title {
-    display: flex;
+  display: flex;
 }
 
-
-
-
 .postCtn {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: top;
-    justify-content: center;
-    padding: 10px;    
-    gap: 20px;
-    min-width: 300px;
-    width: 90%;
-    max-width: 980px;
-    
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  align-items: top;
+  justify-content: center;
+  padding: 10px;
+  gap: 20px;
+  min-width: 300px;
+  width: 90%;
+  max-width: 980px;
 }
 
 .mapCtn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f0f0f0;
-    max-width: 300px;
-    height: fit-content;
-    gap: 10px;
-    padding: 10px;
-    box-shadow: 2px 4px 10px 0px #9d9d9d ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #f0f0f0;
+  max-width: 300px;
+  height: fit-content;
+  gap: 10px;
+  padding: 10px;
+  box-shadow: 2px 4px 10px 0px #9d9d9d;
 }
 .postImg {
-    display: flex;
-    width: 300px;
+  display: flex;
+  width: 300px;
 }
